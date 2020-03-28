@@ -1,7 +1,7 @@
 version: '3'
 services:
   db:
-    image: postgres
+    image: postgres:12-alpine
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
@@ -9,8 +9,8 @@ services:
   web:
     build: .
     command: >
-      bash -c "rm -f tmp/pids/server.pid &&
-      bundle exec rails s -p 3000 -b '0.0.0.0'"
+      sh -c "rm -f tmp/pids/server.pid &&
+      bundle exec rails server -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
     ports:

@@ -5,16 +5,17 @@
 ### Web
 Run:
 ```shell
-docker-compose run web rails new . --force --no-deps --database=postgresql
+docker-compose run web rails new . --force --no-deps --database=postgresql --skip-git
 ```
 ### Api
 Run:
 ```shell
-docker-compose run web rails new . --force --no-deps --database=postgresql --api
+docker-compose run web rails new . --force --no-deps --database=postgresql --api --skip-git
 ```
 
 * `--force` Overwrite files that already exist.
 * `--no-deps` Flag tells compose not to start dependent services.
+* `--skip-git` Skip .gitignore file.
 
 ## 2. Build
 
