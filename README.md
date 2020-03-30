@@ -88,3 +88,12 @@ docker-compose run web rails c
 ```shell
 docker-compose down
 ```
+
+### Restart the application
+
+To restart the application run `docker-compose up` in the project directory.
+
+### Rebuild the application
+
+If you make changes to the Gemfile or the Compose file to try out some different configurations, you need to rebuild. Some changes require only `docker-compose up --build`, but a full rebuild requires a re-run of `docker-compose run web bundle install` to sync changes in the `Gemfile.lock` to the host, followed by `docker-compose up --build`.
+
