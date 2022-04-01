@@ -22,7 +22,7 @@ docker-compose run web rails new . --force --no-deps --database=postgresql --api
 Now that you’ve got a new `Gemfile`, you need to build the image again. 
 
 ```shell
-docker-compose build
+docker-compose build web
 ```
 
 ## 3. Set database setting
@@ -31,10 +31,10 @@ docker-compose build
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: db
-  username: postgres
-  password: postgres
-  pool: 5
+  host: <%= ENV.fetch('DATABASE_HOST') { 'db' } %>
+  username: <%= ENV.fetch('DATABASE_USERNAME') { 'postgres' } %>
+  password: <%= ENV.fetch('DATABASE_PASSWORD') { 'postgres' } %>
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
 
 development:
   <<: *default
@@ -57,17 +57,17 @@ docker-compose up
 ## 5. Create database
 
 ```shell
-docker-compose run web rails db:create
+docker-compose run --rm web rails db:create
 ```
 
 ## 6. Create User model and run migrations
 
 ```shell
-docker-compose run web rails g scaffold user name last_name username age:integer
+docker-compose run --rm web rails g scaffold user name last_name username age:integer
 ```
 
 ```shell
-docker-compose run web rails db:migrate
+docker-compose run --rm web rails db:migrate
 ```
 
 > go to link `localhost:3000/users`
@@ -80,7 +80,7 @@ docker exec -ti rails_db_1 bash -c "psql -U postgres"
 ### Do you want to connect to the rails console?
 
 ```shell
-docker-compose run web rails c
+docker-compose exec web rails c
 ```
 
 ### Detele containers
