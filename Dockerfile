@@ -5,8 +5,7 @@ LABEL version="1.0.1"
 # Packages needed to get Rails running in Alpine.
 ENV BUILD_PACKAGES="build-base" \
     DEV_PACKAGES="tzdata" \
-    DB_PACKAGES="postgresql-dev postgresql-client" \
-    RUBY_PACKAGES="nodejs"
+    DB_PACKAGES="postgresql-dev postgresql-client"
 
 # -U, --update-cache    Update the repository cache
 # and install dependencies
@@ -14,7 +13,6 @@ RUN apk add --update-cache \
     $BUILD_PACKAGES \
     $DEV_PACKAGES \
     $DB_PACKAGES \
-    $RUBY_PACKAGES \
     && rm -rf /var/cache/apk/*
 
 # Configure the main working directory. This is the base
@@ -52,8 +50,7 @@ LABEL version="1.0.1"
 # Packages needed to get Rails running in Alpine.
 ENV BUILD_PACKAGES="build-base" \
     DEV_PACKAGES="tzdata" \
-    DB_PACKAGES="postgresql-dev postgresql-client" \
-    RUBY_PACKAGES="nodejs"
+    DB_PACKAGES="postgresql-dev postgresql-client"
 
 # -U, --update-cache    Update the repository cache
 # and install dependencies
@@ -61,7 +58,6 @@ RUN apk add --update-cache \
     $BUILD_PACKAGES \
     $DEV_PACKAGES \
     $DB_PACKAGES \
-    $RUBY_PACKAGES \
     && rm -rf /var/cache/apk/*
 
 # Configure the main working directory. This is the base
