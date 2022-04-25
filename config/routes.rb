@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'sidekiq/web'
 
 # Configure Sidekiq-specific session middleware
-Sidekiq::Web.use ActionDispatch::Cookies
-Sidekiq::Web.use Rails.application.config.session_store, Rails.application.config.session_options
+Sidekiq::Web.use(ActionDispatch::Cookies)
+Sidekiq::Web.use(Rails.application.config.session_store, Rails.application.config.session_options)
 
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
@@ -15,5 +17,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   namespace :v1 do
+    resources :users
   end
 end

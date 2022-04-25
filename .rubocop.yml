@@ -1086,6 +1086,9 @@ RSpec/AlignRightLetBrace:
 RSpec/AlignLeftLetBrace:
   Enabled: false
 
+RSpec/MultipleExpectations:
+  Max: 10
+
 RSpec/MultipleMemoizedHelpers:
   Max: 10
 
