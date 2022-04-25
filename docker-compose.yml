@@ -4,7 +4,12 @@ services:
     image: postgres:14.2-alpine
     env_file: ./docker-env/.env.pg
     volumes:
+      # point to your postgres init scripts (folder or file)
+      - ./docker-entrypoints/db_init:/entrypoint-initdb.d
+      # if you need persistent data, point data to local folder
       - ./tmp/db:/var/lib/postgresql/data
+      # point docker to directory with your config
+      - ./docker-files/db_config:/db_config
   api:
     build:
       context: .
@@ -25,7 +30,7 @@ services:
   redis:
     image: 'redis:7.0-rc-alpine'
     env_file: ./docker-env/.env
-    command: redis-server
+    command: sh -c "redis-server"
     ports:
       - '6379:6379'
     volumes:
