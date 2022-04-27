@@ -18,6 +18,7 @@ AllCops:
     - 'tmp/**/*'
     - '.*'
     - 'db/schema.rb'
+    - 'spec/swagger_helper.rb'
 
 Rails:
   Enabled: true
