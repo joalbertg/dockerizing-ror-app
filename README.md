@@ -1,3 +1,5 @@
+[![Build project](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_linters.yml/badge.svg?branch=api-project-alpine)](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_linters.yml)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
