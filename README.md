@@ -1,4 +1,4 @@
-[![Build project](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_linters.yml/badge.svg?branch=api-project-alpine)](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_linters.yml)
+[![Continuous Integration](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_tests_and_linters.yml/badge.svg)](https://github.com/joalbertg/dockerizing-ror-app/actions/workflows/build_with_tests_and_linters.yml)
 
 # README
 
