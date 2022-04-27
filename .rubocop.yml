@@ -7,18 +7,17 @@ require:
 AllCops:
   EnabledByDefault: true
   Exclude:
-  <% `git status --ignored --porcelain`.lines.grep(/^!! /).each do |path| %>
-    - <%= path.sub(/^!! /, '') %>
-  <% end %>
-    - 'Gemfile*'
+  # <% `git status --ignored --porcelain`.lines.grep(/^!! /).each do |path| %>
+  #   - <%= path.sub(/^!! /, '') %>
+  # <% end %>
     - 'Rakefile'
     - 'bin/*'
     - 'config.ru'
     - 'config/**/*.rb'
     - '*.yml'
-    - 'spec/*_helper.rb'
     - 'tmp/**/*'
     - '.*'
+    - 'db/schema.rb'
 
 Rails:
   Enabled: true

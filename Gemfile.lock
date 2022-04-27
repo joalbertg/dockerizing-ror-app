@@ -254,9 +254,9 @@ PLATFORMS
 
 DEPENDENCIES
   amazing_print (~> 1.4)
-  bootsnap
+  bootsnap (~> 1.11, >= 1.11.1)
   database_cleaner-active_record (~> 2.0, >= 2.0.1)
-  debug
+  debug (~> 1.5)
   factory_bot_rails (~> 6.2)
   pg (~> 1.1)
   pry (~> 0.14.1)
